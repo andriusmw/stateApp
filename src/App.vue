@@ -1,14 +1,20 @@
 <script setup>
+import {ref} from "vue"
+
+const red = ref(0)
+const blue = ref(0)
+const green = ref(0)
 
 </script>
 
 
 <template>
-    <main>
+    <main :style="{backgroundColor: `rgb(${red},${green},${blue})`}">
       <div>
-        <input type="number" placeholder="red">
-        <input type="number" placeholder="blue">
-        <input type="number" placeholder="green">
+        <!-- v-model was two way data binding -->
+        <input type="number" v-model="red"    placeholder="red">
+        <input type="number" v-model="blue"   placeholder="blue">
+        <input type="number" v-model="green"  placeholder="green">
       </div>
         
     </main>
